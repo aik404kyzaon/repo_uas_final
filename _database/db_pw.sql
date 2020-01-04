@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2020 at 08:17 AM
+-- Generation Time: Jan 04, 2020 at 09:28 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -72,9 +72,7 @@ CREATE TABLE `tb_log` (
 --
 
 INSERT INTO `tb_log` (`id`, `nim`, `telp_lama`, `telp_baru`, `tgl_diubah`) VALUES
-(1, '161240000551', '08987654321', '08987654320', '2020-01-03 19:51:21'),
-(2, '161240000552', '08987654322', '08987654323', '2020-01-04 13:20:03'),
-(3, '161240000552', '089501800531', '089501800531', '2020-01-04 13:20:08');
+(1, '16124000551 ', '08987654321', '08987654320', '2020-01-04 20:17:49');
 
 -- --------------------------------------------------------
 
@@ -96,22 +94,21 @@ CREATE TABLE `tb_mhs` (
 --
 
 INSERT INTO `tb_mhs` (`id`, `nim`, `nama`, `jk`, `alamat`, `telp`) VALUES
-(1, '161240000551', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654320'),
-(2, '161240000552', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654323'),
-(3, '161240000553', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654323'),
-(4, '161240000554', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654324'),
-(5, '161240000555', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654325'),
-(6, '161240000556', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654326'),
-(7, '161240000557', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654327'),
-(8, '161240000558', 'Arky Ikfarikza', 'L', 'Wonosari', '08987654328'),
-(10, '161240000552', 'Asli', 'P', 'Tahunan', '089501800531');
+(1, '16124000551 ', 'Mahasiswa', 'L', 'Jepara', '08987654320'),
+(2, '16124000552 ', 'Mahasiswa', 'L', 'Jepara', '08987654322'),
+(3, '16124000553 ', 'Mahasiswa', 'L', 'Jepara', '08987654323'),
+(4, '16124000554 ', 'Mahasiswa', 'L', 'Jepara', '08987654324'),
+(5, '16124000555 ', 'Mahasiswa', 'L', 'Jepara', '08987654325'),
+(6, '16124000556 ', 'Mahasiswa', 'L', 'Jepara', '08987654326'),
+(7, '16124000557 ', 'Mahasiswa', 'L', 'Jepara', '08987654327'),
+(8, '16124000558 ', 'Mahasiswa', 'L', 'Jepara', '08987654328'),
+(9, '16124000559 ', 'Mahasiswa', 'L', 'Jepara', '08987654329');
 
 --
 -- Triggers `tb_mhs`
 --
 DELIMITER $$
-CREATE TRIGGER `update_telp` AFTER UPDATE ON `tb_mhs` FOR EACH ROW begin
-insert into tb_log set
+CREATE TRIGGER `update_telp` AFTER UPDATE ON `tb_mhs` FOR EACH ROW begin insert into tb_log set
 nim = old.nim,
 telp_baru = new.telp,
 telp_lama = old.telp,
@@ -162,13 +159,13 @@ ALTER TABLE `tb_mhs`
 -- AUTO_INCREMENT for table `tb_log`
 --
 ALTER TABLE `tb_log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tb_mhs`
 --
 ALTER TABLE `tb_mhs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
